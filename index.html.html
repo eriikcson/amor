@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta para mi amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+                  url('https://i.imgur.com/ZC7Qki9.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      padding: 2rem;
+      color: #b30059;
+      overflow-x: hidden;
+    }
+
+    .carta {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 0, 102, 0.3);
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto 4rem auto;
+      animation: aparecer 1.2s ease-in-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      color: #e60073;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .firma {
+      margin-top: 2rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: #cc0066;
+    }
+
+    .corazon-img {
+      width: 200px;
+      height: 180px;
+      background-color: pink;
+      position: relative;
+      margin: 3rem auto 0 auto;
+      transform: rotate(-45deg);
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 0, 102, 0.4);
+    }
+
+    .corazon-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: rotate(45deg);
+    }
+
+    .corazon-img::before,
+    .corazon-img::after {
+      content: "";
+      width: 200px;
+      height: 180px;
+      background-color: pink;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .corazon-img::before {
+      top: -100px;
+      left: 0;
+    }
+
+    .corazon-img::after {
+      left: 100px;
+      top: 0;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 20px;
+      color: red;
+      animation: flotar 6s linear infinite;
+      top: 100vh;
+      z-index: 1;
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Carta -->
+  <div class="carta">
+    <h1>Para: El amor de mi vida 💌</h1>
+    <p>Mor, leí tu carta y me encantó, a la vez me dolió. Sé que he fallado demasiado, he sido demasiado caliente, me pesa que pienses que yo solo te pienso para tener sexo, pero eso no es así, te amo de verdad, aunque a veces no sé cómo demostrarlo. Pero sabes, quiero mejorar. Por ti, por mí, por los dos.</p>
+
+    <p>Sé que te he hecho sentir incómoda, pero en realidad tengo esas ganas de cambiar y ser como siempre has querido que sea. Te amooo como no te lo puedes imaginar, en realidad te amo demasiado. He cambiado cosas que nunca pensé que haría por alguien, y ahora quiero cambiar…</p>
+
+    <p>Solo que sabes 😞 también tengo miedo. No es algo que yo haya hecho pero sé que yo puedo. Pero tengo miedo a que termines engañándome, miedo a que al final termines jugando conmigo, tengo miedo a eso. Verás, soy caliente, lo soy, trato, trato de no serlo, en serio trato, y soy así cuando algo me gusta ser o me gusta algo, estaré la mayor parte siéndolo, como ser caliente todo el tiempo, soy así, con la serie que estoy viendo, estoy ahí, no me canso, y yo sé que si seré como quieres, estaré ahí todo el tiempo para ti.</p>
+
+    <p>NO SÉ HACER CARTAS, PERO PARA QUE VEAS QUE EN REALIDAD TE AMO Y QUIERO QUE SEPAS QUE NO SOLO TE QUIERO PARA TENER SEXO, JSJS, NO UTILICÉ INTELIGENCIA ARTIFICIAL. TE AMO MI PEQUEÑA</p>
+
+    <div class="firma">
+      Att: El amor de tu vida 🫶<br>
+      Para: El amor de mi vida
+    </div>
+
+    <!-- Imagen en forma de corazón -->
+    <div class="corazon-img">
+      <img src="AMOR.jpeg" alt="Nosotros">
+    </div>
+  </div>
+
+  <!-- Script para corazones flotantes -->
+  <script>
+    function crearCorazon() {
+      const corazon = document.createElement('div');
+      corazon.classList.add('heart');
+      corazon.style.left = Math.random() * 100 + 'vw';
+      corazon.textContent = '❤️';
+      corazon.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(corazon);
+      setTimeout(() => {
+        corazon.remove();
+      }, 6000);
+    }
+
+    setInterval(crearCorazon, 300);
+  </script>
+
+</body>
+</html>
